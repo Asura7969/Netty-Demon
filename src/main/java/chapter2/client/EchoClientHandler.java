@@ -24,6 +24,11 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuffer> {
         System.out.println("Client received: " + msg.toString());
     }
 
+    /**
+     * 在到服务器的连接已经建立之后将被调用
+     * @param ctx
+     * @throws Exception
+     */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         //当被通知 channel 是最活跃的时候,发送一条消息

@@ -24,13 +24,14 @@ public class EchoServer {
         try {
             // (2) 创建ServerBootstrap  负责引导服务器和客户端
             ServerBootstrap b = new ServerBootstrap();
-            // (3) 指定所使用的 NIO 传输 Channel
             b.group(group)
+                    // (3) 指定所使用的 NIO 传输 Channel
                     .channel(NioServerSocketChannel.class)
                     // (4) 指定所使用的端口以及套接字地址
                     .localAddress(new InetSocketAddress(port))
                     // (5) 添加一个 EchoChannelHandler 到 Channel 的 channelPipeline
                     .childHandler(new ChannelInitializer<SocketChannel>() {     //这个channelHandler 将会受到有关入站消息的通知
+                        @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             // (6) EchoServerHandler 被标注为 @Sharable,所以我们可以总是使用同样的实例
                             //这里对于所有的客户端连接来说,都会使用同一个 EchoServerHandler ,因为其被标注为 @Sharable

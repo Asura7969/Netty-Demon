@@ -33,6 +33,7 @@ public class EchoClient {
                     .remoteAddress(new InetSocketAddress(host,port))
                     //在创建channel时,向 ChannelPipeline 中添加一个 EchoClientHandler
                     .handler(new ChannelInitializer<SocketChannel>() {
+                        @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new EchoClientHandler());
                         }
