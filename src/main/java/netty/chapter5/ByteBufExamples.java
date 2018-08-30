@@ -1,4 +1,4 @@
-package chapter5;
+package netty.chapter5;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufProcessor;

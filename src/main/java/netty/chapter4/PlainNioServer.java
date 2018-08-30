@@ -1,4 +1,4 @@
-package chapter4;
+package netty.chapter4;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

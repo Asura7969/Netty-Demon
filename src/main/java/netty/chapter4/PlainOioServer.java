@@ -1,4 +1,4 @@
-package chapter4;
+package netty.chapter4;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,6 +17,7 @@ public class PlainOioServer {
             System.out.println("Accepted connection from " + clientSocket);
             //创建一个新的线程来处理该连接
             new Thread(new Runnable() {
+                @Override
                 public void run() {
                     OutputStream out;
                     try {
